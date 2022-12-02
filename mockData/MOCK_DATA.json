@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "name": "est risus auctor sed tristique in tempus",
+        "image": "http://dummyimage.com/361x364.png/cc0000/ffffff",
+        "rating": 3.4,
+        "longitude": -7.7801629,
+        "latitude": 38.7035566
+    },
+    {
+        "id": 2,
+        "name": "id ornare",
+        "image": "http://dummyimage.com/326x491.png/5fa2dd/ffffff",
+        "rating": 4.3,
+        "longitude": -45.2957103,
+        "latitude": -20.0859007
+    },
+    {
+        "id": 3,
+        "name": "sem sed sagittis nam",
+        "image": "http://dummyimage.com/345x416.png/cc0000/ffffff",
+        "rating": 2.2,
+        "longitude": 107.905837,
+        "latitude": 26.463923
+    },
+    {
+        "id": 4,
+        "name": "faucibus accumsan odio curabitur",
+        "image": "http://dummyimage.com/342x453.png/dddddd/000000",
+        "rating": 2,
+        "longitude": 120.477813,
+        "latitude": 37.646108
+    },
+    {
+        "id": 5,
+        "name": "amet eros suspendisse",
+        "image": "http://dummyimage.com/372x465.png/5fa2dd/ffffff",
+        "rating": 4.6,
+        "longitude": -65.76555,
+        "latitude": 44.61685
+    },
+    {
+        "id": 6,
+        "name": "viverra pede",
+        "image": "http://dummyimage.com/386x398.png/5fa2dd/ffffff",
+        "rating": 1.5,
+        "longitude": -73.36585,
+        "latitude": 45.08338
+    },
+    {
+        "id": 7,
+        "name": "dictumst aliquam",
+        "image": "http://dummyimage.com/361x424.png/dddddd/000000",
+        "rating": 2.6,
+        "longitude": 35.241822,
+        "latitude": 31.678719
+    },
+    {
+        "id": 8,
+        "name": "erat id mauris vulputate",
+        "image": "http://dummyimage.com/498x380.png/5fa2dd/ffffff",
+        "rating": 3.9,
+        "longitude": 11.8951003,
+        "latitude": 57.855421
+    },
+    {
+        "id": 9,
+        "name": "quis turpis",
+        "image": "http://dummyimage.com/305x494.png/dddddd/000000",
+        "rating": 4.0,
+        "longitude": 102.5064329,
+        "latitude": 35.1933373
+    },
+    {
+        "id": 10,
+        "name": "faucibus cursus urna ut tellus nulla ut",
+        "image": "http://dummyimage.com/455x418.png/ff4444/ffffff",
+        "rating": 4.8,
+        "longitude": 126.0415372,
+        "latitude": 10.0342937
+    },
+    {
+        "id": 11,
+        "name": "vestibulum rutrum rutrum",
+        "image": "http://dummyimage.com/443x326.png/cc0000/ffffff",
+        "rating": 2.4,
+        "longitude": 106.804564,
+        "latitude": -6.588201
+    },
+    {
+        "id": 12,
+        "name": "morbi odio odio",
+        "image": "http://dummyimage.com/481x397.png/dddddd/000000",
+        "rating": 2.8,
+        "longitude": 72.9900306,
+        "latitude": 32.7151005
+    },
+    {
+        "id": 13,
+        "name": "fusce congue diam id ornare imperdiet",
+        "image": "http://dummyimage.com/479x435.png/5fa2dd/ffffff",
+        "rating": 1.1,
+        "longitude": 117.006093,
+        "latitude": 39.761424
+    },
+    {
+        "id": 14,
+        "name": "ipsum praesent blandit",
+        "image": "http://dummyimage.com/469x314.png/dddddd/000000",
+        "rating": 5.0,
+        "longitude": 112.4514977,
+        "latitude": -6.893751
+    },
+    {
+        "id": 15,
+        "name": "dapibus duis at velit eu est",
+        "image": "http://dummyimage.com/498x319.png/cc0000/ffffff",
+        "rating": 4.8,
+        "longitude": 44.643763,
+        "latitude": 43.7071168
+    },
+    {
+        "id": 16,
+        "name": "a pede",
+        "image": "http://dummyimage.com/448x320.png/cc0000/ffffff",
+        "rating": 2.7,
+        "longitude": -8.2213311,
+        "latitude": 41.1059592
+    },
+    {
+        "id": 17,
+        "name": "curae donec pharetra",
+        "image": "http://dummyimage.com/392x378.png/ff4444/ffffff",
+        "rating": 2.95,
+        "longitude": 35.8960765,
+        "latitude": 32.2746515
+    },
+    {
+        "id": 18,
+        "name": "sagittis nam congue risus semper",
+        "image": "http://dummyimage.com/437x468.png/5fa2dd/ffffff",
+        "rating": 1.56,
+        "longitude": 24.5376727,
+        "latitude": 42.1333129
+    },
+    {
+        "id": 19,
+        "name": "volutpat convallis morbi",
+        "image": "http://dummyimage.com/494x498.png/5fa2dd/ffffff",
+        "rating": 4.59,
+        "longitude": -8.3323796,
+        "latitude": 41.3922962
+    },
+    {
+        "id": 20,
+        "name": "tincidunt nulla",
+        "image": "http://dummyimage.com/362x467.png/5fa2dd/ffffff",
+        "rating": 1.53,
+        "longitude": 12.3176309,
+        "latitude": 58.276821
+    }
+]

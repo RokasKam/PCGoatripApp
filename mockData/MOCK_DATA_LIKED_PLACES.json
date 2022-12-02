@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "est risus auctor sed tristique in tempus",
+        "image": "http://dummyimage.com/361x364.png/cc0000/ffffff",
+        "rating": 3.4,
+        "longitude": -7.7801629,
+        "latitude": 38.7035566
+    },
+    {
+        "id": 3,
+        "name": "sem sed sagittis nam",
+        "image": "http://dummyimage.com/345x416.png/cc0000/ffffff",
+        "rating": 2.2,
+        "longitude": 107.905837,
+        "latitude": 26.463923
+    },
+    {
+        "id": 5,
+        "name": "amet eros suspendisse",
+        "image": "http://dummyimage.com/372x465.png/5fa2dd/ffffff",
+        "rating": 4.6,
+        "longitude": -65.76555,
+        "latitude": 44.61685
+    },
+    {
+        "id": 7,
+        "name": "dictumst aliquam",
+        "image": "http://dummyimage.com/361x424.png/dddddd/000000",
+        "rating": 2.6,
+        "longitude": 35.241822,
+        "latitude": 31.678719
+    },
+    {
+        "id": 9,
+        "name": "quis turpis",
+        "image": "http://dummyimage.com/305x494.png/dddddd/000000",
+        "rating": 4.0,
+        "longitude": 102.5064329,
+        "latitude": 35.1933373
+    },
+    {
+        "id": 11,
+        "name": "vestibulum rutrum rutrum",
+        "image": "http://dummyimage.com/443x326.png/cc0000/ffffff",
+        "rating": 2.4,
+        "longitude": 106.804564,
+        "latitude": -6.588201
+    },
+    {
+        "id": 13,
+        "name": "fusce congue diam id ornare imperdiet",
+        "image": "http://dummyimage.com/479x435.png/5fa2dd/ffffff",
+        "rating": 1.1,
+        "longitude": 117.006093,
+        "latitude": 39.761424
+    },
+    {
+        "id": 15,
+        "name": "dapibus duis at velit eu est",
+        "image": "http://dummyimage.com/498x319.png/cc0000/ffffff",
+        "rating": 4.8,
+        "longitude": 44.643763,
+        "latitude": 43.7071168
+    },
+    {
+        "id": 17,
+        "name": "curae donec pharetra",
+        "image": "http://dummyimage.com/392x378.png/ff4444/ffffff",
+        "rating": 2.95,
+        "longitude": 35.8960765,
+        "latitude": 32.2746515
+    },
+    {
+        "id": 19,
+        "name": "volutpat convallis morbi",
+        "image": "http://dummyimage.com/494x498.png/5fa2dd/ffffff",
+        "rating": 4.59,
+        "longitude": -8.3323796,
+        "latitude": 41.3922962
+    }
+]

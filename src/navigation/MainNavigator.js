@@ -4,7 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import AddPlaceScreen from '../screens/AddPlaceScreen/AddPlaceScreen';
-import ProfileScreen from '../screens/ProfileScreen./ProfileScreen';
+import ProfileScreen from '../screens/ProfileScreen/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
