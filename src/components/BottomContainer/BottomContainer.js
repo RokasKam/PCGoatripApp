@@ -3,15 +3,23 @@ import React from 'react';
 import {Rating} from 'react-native-ratings';
 import styles from './BottomContainer.style';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {useNavigation} from '@react-navigation/native';
 
 const BottomContainer = ({item}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.bottomContainer}>
       <View style={styles.row}>
         <Text style={styles.textStyle} numberOfLines={1} adjustsFontSizeToFit>
           {item.name}
         </Text>
-        <Icon style={styles.icon} name="map-pin" color="#7EA48E" size={20} />
+        <Icon
+          style={styles.icon}
+          name="map-pin"
+          color="#7EA48E"
+          size={20}
+          onPress={() => navigation.navigate('Map', {place: item})}
+        />
       </View>
       <View style={styles.row}>
         <View style={styles.ratingBlock}>

@@ -24,7 +24,7 @@ const LoginScreen = () => {
           <Button
             buttonText="Login"
             onClickAction={() => {
-              navigation.navigate('Home');
+              navigation.navigate('HomeNavigator');
             }}
           />
           <TransparentButton
