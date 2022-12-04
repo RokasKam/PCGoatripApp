@@ -2,11 +2,18 @@ import {TextInput, View} from 'react-native';
 import React from 'react';
 import styles from './Input.style';
 
-const Input = ({placeHolder, isSecureTextEntryNeeded}) => {
+const Input = ({
+  placeHolder,
+  isSecureTextEntryNeeded,
+  text,
+  handleTextChange,
+}) => {
   return (
     <View style={styles.inputView}>
       <TextInput
         style={styles.textInput}
+        value={text}
+        onChangeText={value => handleTextChange(value)}
         placeholder={placeHolder}
         placeholderTextColor="white"
         autoCapitalize="none"

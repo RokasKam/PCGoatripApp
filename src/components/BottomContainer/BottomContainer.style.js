@@ -4,7 +4,7 @@ export default StyleSheet.create({
   bottomContainer: {
     backgroundColor: 'white',
     height: 122,
-    borderRadius: 16,
+    borderRadius: 8,
   },
   row: {
     flexDirection: 'row',

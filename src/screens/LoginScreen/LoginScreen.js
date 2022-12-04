@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import TransparentButton from '../../components/TransparentButton/TransparentButton';
@@ -8,6 +8,9 @@ import {useNavigation} from '@react-navigation/core';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  console.log(email, password);
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -19,8 +22,18 @@ const LoginScreen = () => {
             source={require('../../img/WhiteGoatrip.png')}
             style={styles.logo}
           />
-          <Input placeHolder="Email" isSecureTextEntryNeeded={false} />
-          <Input placeHolder="Password" isSecureTextEntryNeeded={true} />
+          <Input
+            placeHolder="Email"
+            isSecureTextEntryNeeded={false}
+            text={email}
+            handleTextChange={setEmail}
+          />
+          <Input
+            placeHolder="Password"
+            isSecureTextEntryNeeded={true}
+            text={password}
+            handleTextChange={setPassword}
+          />
           <Button
             buttonText="Login"
             onClickAction={() => {

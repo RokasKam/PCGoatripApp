@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   page: {
@@ -6,17 +6,14 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  list: {
-    flex: 1,
-    height: Dimensions.get('window').height,
+  searchBlock: {
     width: '95%',
+    marginTop: 4,
   },
-  sectionImage: {
-    height: 243,
-    borderWidth: 0,
-  },
-  bottomContainer: {
-    marginTop: -16,
-    marginBottom: 16,
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+    height: '102%',
+    width: '100%',
   },
 });

@@ -5,7 +5,7 @@ export default StyleSheet.create({
     height: 50,
     backgroundColor: '#AFD2D985',
     borderRadius: 30,
-    marginBottom: 15,
+    marginBottom: 12,
   },
   textInput: {
     height: 50,

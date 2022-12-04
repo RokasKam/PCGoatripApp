@@ -13,12 +13,18 @@ const LoginNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
-          options={{headerShown: false}}
+          options={{
+            headerShown: false,
+          }}
           name="Login"
           component={LoginScreen}
         />
         <Stack.Screen
-          options={{headerShown: false}}
+          options={{
+            headerShown: false,
+            headerLeft: null,
+            gestureEnabled: false,
+          }}
           name="HomeNavigator"
           component={MainNavigator}
         />

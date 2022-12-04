@@ -17,7 +17,7 @@ export default StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     paddingVertical: 12,
-    backgroundColor: '#E1E1E1',
+    backgroundColor: '#EBEBEB',
     width: '100%',
     marginBottom: 8,
   },
@@ -33,6 +33,12 @@ export default StyleSheet.create({
   infoBlock: {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    width: '100%',
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+    height: '102%',
     width: '100%',
   },
 });
