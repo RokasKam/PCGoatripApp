@@ -19,19 +19,19 @@ const Filters = () => {
             styles.item,
             {
               backgroundColor:
-                item === selectedCategory ? '#7EA48E' : '#ffffff',
-              borderWidth: item === selectedCategory ? 0 : 0.5,
+                item.label === selectedCategory ? '#7EA48E' : '#ffffff',
+              borderWidth: item.label === selectedCategory ? 0 : 0.5,
             },
           ]}
-          onPress={() => onClick(item)}>
+          onPress={() => onClick(item.label)}>
           <Text
             style={[
               styles.title,
               {
-                color: item === selectedCategory ? '#ffffff' : 'dimgrey',
+                color: item.label === selectedCategory ? '#ffffff' : 'dimgrey',
               },
             ]}>
-            {item}
+            {item.label}
           </Text>
         </TouchableOpacity>
       )}
