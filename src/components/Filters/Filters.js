@@ -1,6 +1,6 @@
 import {Text, TouchableOpacity, FlatList} from 'react-native';
 import React, {useState} from 'react';
-import PlaceCategory from '../../../constants/PlaceCategories';
+import PlaceCategory from '../../constants/placesCategories';
 import styles from './Filters.style';
 
 const Filters = () => {

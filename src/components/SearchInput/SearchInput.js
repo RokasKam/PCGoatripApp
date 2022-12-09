@@ -17,7 +17,7 @@ const SearchInput = () => {
             handleSearch('', false);
           }}>
           <Image
-            source={require('../../img/arrow.png')}
+            source={require('../../assets/img/arrowBack.png')}
             style={styles.backArrowImageStyle}
           />
         </Pressable>
@@ -39,7 +39,7 @@ const SearchInput = () => {
           handleSearch(searchText, true);
         }}>
         <Image
-          source={require('../../img/SearchIcon.png')}
+          source={require('../../assets/img/searchIcon.png')}
           style={styles.imageStyle}
         />
       </Pressable>

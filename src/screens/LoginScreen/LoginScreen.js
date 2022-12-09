@@ -14,12 +14,12 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require('../../img/Screen.png')}
+        source={require('../../assets/img/screen.png')}
         resizeMode="cover"
         style={styles.image}>
         <KeyboardAvoidingView behavior="padding" style={styles.mainBlock}>
           <Image
-            source={require('../../img/WhiteGoatrip.png')}
+            source={require('../../assets/img/whiteGoatrip.png')}
             style={styles.logo}
           />
           <Input

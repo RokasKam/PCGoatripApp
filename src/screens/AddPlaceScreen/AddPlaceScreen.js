@@ -8,9 +8,9 @@ import {
 import React, {useState} from 'react';
 import InputToWriteRange from '../../components/InputToWriteRange/InputToWriteRange';
 import DropDownPicker from 'react-native-dropdown-picker';
-import PlaceCategory from '../../../constants/PlaceCategories';
 import {styling} from './AddPlaceScreen.style';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import PlaceCategory from '../../constants/placesCategories';
 
 const AddPlaceScreen = () => {
   const [name, setName] = useState('');
@@ -23,7 +23,7 @@ const AddPlaceScreen = () => {
 
   return (
     <ImageBackground
-      source={require('../../img/BlurryScreen.png')}
+      source={require('../../assets/img/blurryScreen.png')}
       resizeMode="cover"
       style={styles.image}>
       <KeyboardAwareScrollView contentContainerStyle={styles.page}>
@@ -53,7 +53,6 @@ const AddPlaceScreen = () => {
               items={PlaceCategory}
               setOpen={setOpen}
               setValue={setCategory}
-              arrowIconStyle={styles.iconsStyle}
               listMode={'SCROLLVIEW'}
             />
           </View>

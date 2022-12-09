@@ -2,12 +2,12 @@ import {View, Text, SafeAreaView, ImageBackground} from 'react-native';
 import React from 'react';
 import styles from './ProfileScreen.style';
 import Places from '../../components/Places/Places';
-import MOCK_DATA_LIKED_PLACES from '../../../mockData/MOCK_DATA_LIKED_PLACES.json';
+import MOCK_DATA_LIKED_PLACES from '../../assets/mockData/MOCK_DATA_LIKED_PLACES.json';
 const ProfileScreen = () => {
   const data = MOCK_DATA_LIKED_PLACES;
   return (
     <ImageBackground
-      source={require('../../img/BlurryScreen.png')}
+      source={require('../../assets/img/blurryScreen.png')}
       resizeMode="cover"
       style={styles.image}>
       <SafeAreaView style={styles.page}>
