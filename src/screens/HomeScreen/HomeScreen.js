@@ -1,18 +1,16 @@
-import {ImageBackground, SafeAreaView, View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 import React from 'react';
 import styles from './HomeScreen.style';
 import MOCK_DATA from '../../assets/mockData/MOCK_DATA.json';
 import Places from '../../components/Places/Places';
 import Filters from '../../components/Filters/Filters';
 import SearchInput from '../../components/SearchInput/SearchInput';
+import BlurryBackround from '../../components/BlurryBackround/BlurryBackround';
 
 const HomeScreen = () => {
   const data = MOCK_DATA;
   return (
-    <ImageBackground
-      source={require('../../assets/img/blurryScreen.png')}
-      resizeMode="cover"
-      style={styles.image}>
+    <BlurryBackround>
       <SafeAreaView style={styles.page}>
         <View style={styles.searchBlock}>
           <SearchInput />
@@ -20,7 +18,7 @@ const HomeScreen = () => {
         </View>
         <Places places={data} />
       </SafeAreaView>
-    </ImageBackground>
+    </BlurryBackround>
   );
 };
 

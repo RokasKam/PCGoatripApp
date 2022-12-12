@@ -1,15 +1,13 @@
-import {View, Text, SafeAreaView, ImageBackground} from 'react-native';
+import {View, Text, SafeAreaView} from 'react-native';
 import React from 'react';
 import styles from './ProfileScreen.style';
 import Places from '../../components/Places/Places';
 import MOCK_DATA_LIKED_PLACES from '../../assets/mockData/MOCK_DATA_LIKED_PLACES.json';
+import BlurryBackround from '../../components/BlurryBackround/BlurryBackround';
 const ProfileScreen = () => {
   const data = MOCK_DATA_LIKED_PLACES;
   return (
-    <ImageBackground
-      source={require('../../assets/img/blurryScreen.png')}
-      resizeMode="cover"
-      style={styles.image}>
+    <BlurryBackround>
       <SafeAreaView style={styles.page}>
         <View style={styles.infoBlock}>
           <View style={styles.accountInfo}>
@@ -22,7 +20,7 @@ const ProfileScreen = () => {
         </View>
         <Places places={data} />
       </SafeAreaView>
-    </ImageBackground>
+    </BlurryBackround>
   );
 };
 

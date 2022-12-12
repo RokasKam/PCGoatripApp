@@ -1,9 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   mainBlock: {
     flex: 1,
     alignItems: 'center',
@@ -16,6 +13,6 @@ export default StyleSheet.create({
     width: '100%',
   },
   logo: {
-    marginBottom: '50%',
+    marginBottom: '75%',
   },
 });

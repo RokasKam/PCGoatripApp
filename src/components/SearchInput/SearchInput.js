@@ -8,7 +8,6 @@ const SearchInput = () => {
     setSearchAplied(isSearchAplied);
     setSearchText(text);
   };
-  console.log(searchText);
   return (
     <View style={styles.sectionStyle}>
       {searchAplied ? (

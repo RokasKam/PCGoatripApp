@@ -1,16 +1,11 @@
-import {
-  View,
-  Text,
-  ImageBackground,
-  TextInput,
-  SafeAreaView,
-} from 'react-native';
+import {View, Text, TextInput, SafeAreaView} from 'react-native';
 import React, {useState} from 'react';
 import InputToWriteRange from '../../components/InputToWriteRange/InputToWriteRange';
 import DropDownPicker from 'react-native-dropdown-picker';
 import {styling} from './AddPlaceScreen.style';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import PlaceCategory from '../../constants/placesCategories';
+import BlurryBackround from '../../components/BlurryBackround/BlurryBackround';
 
 const AddPlaceScreen = () => {
   const [name, setName] = useState('');
@@ -22,10 +17,7 @@ const AddPlaceScreen = () => {
   const styles = styling(open);
 
   return (
-    <ImageBackground
-      source={require('../../assets/img/blurryScreen.png')}
-      resizeMode="cover"
-      style={styles.image}>
+    <BlurryBackround>
       <KeyboardAwareScrollView contentContainerStyle={styles.page}>
         <SafeAreaView style={styles.section}>
           <Text style={styles.title}>Add a new place</Text>
@@ -73,7 +65,7 @@ const AddPlaceScreen = () => {
           />
         </SafeAreaView>
       </KeyboardAwareScrollView>
-    </ImageBackground>
+    </BlurryBackround>
   );
 };
 
