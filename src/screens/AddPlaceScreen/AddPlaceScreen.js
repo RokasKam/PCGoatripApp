@@ -6,6 +6,12 @@ import {styling} from './AddPlaceScreen.style';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import PlaceCategory from '../../constants/placesCategories';
 import BlurryBackround from '../../components/BlurryBackround/BlurryBackround';
+import Button from '../../components/Button/Button';
+import AddPhoto from './AddPhoto';
+import {
+  onCameraPress,
+  onImageLibraryPress,
+} from '../../serivces/generic/uploadPhoto';
 
 const AddPlaceScreen = () => {
   const [name, setName] = useState('');
@@ -14,7 +20,11 @@ const AddPlaceScreen = () => {
   const [howLong, setHowLong] = useState({from: 0, to: 0});
   const [open, setOpen] = useState(false);
   const [category, setCategory] = useState('All');
+  const [pickerResponse, setPickerResponse] = useState(null);
+  const [visible, setVisible] = useState(false);
+
   const styles = styling(open);
+  const uri = pickerResponse?.assets && pickerResponse.assets[0].uri;
 
   return (
     <BlurryBackround>
@@ -62,6 +72,19 @@ const AddPlaceScreen = () => {
             upText="How long does the visit could take?"
             inputInfo={howLong}
             setInputInfo={setHowLong}
+          />
+          <View style={styles.button}>
+            <Button
+              buttonText="Choose a picture"
+              onClickAction={() => setVisible(true)}
+            />
+          </View>
+          <AddPhoto
+            isVisible={visible}
+            onClose={() => setVisible(false)}
+            onImageLibraryPress={() => onImageLibraryPress(setPickerResponse)}
+            onCameraPress={() => onCameraPress(setPickerResponse)}
+            uri={uri}
           />
         </SafeAreaView>
       </KeyboardAwareScrollView>

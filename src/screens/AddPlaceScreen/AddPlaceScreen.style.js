@@ -68,4 +68,10 @@ export const styling = open =>
       alignItems: 'center',
       marginTop: 8,
     },
+    button: {
+      marginTop: 16,
+      width: '100%',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
   });
