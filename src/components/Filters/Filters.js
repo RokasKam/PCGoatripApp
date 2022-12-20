@@ -1,6 +1,6 @@
 import {Text, TouchableOpacity, FlatList} from 'react-native';
 import React, {useState} from 'react';
-import PlaceCategory from '../../constants/placesCategories';
+import placesCategories from '../../constants/placesCategories';
 import styles from './Filters.style';
 
 const Filters = () => {
@@ -12,7 +12,7 @@ const Filters = () => {
     <FlatList
       style={styles.container}
       horizontal={true}
-      data={PlaceCategory}
+      data={placesCategories}
       renderItem={({item}) => (
         <TouchableOpacity
           style={[

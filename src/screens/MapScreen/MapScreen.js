@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './MapScreen.style';
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 import BottomContainer from '../../components/BottomContainer/BottomContainer';
-import {getLocation} from '../../serivces/generic/getUserLocation';
+import {userLocation} from '../../serivces/generic/userLocation';
 
 const MapScreen = ({route}) => {
   const place = route.params.place;
@@ -16,7 +16,7 @@ const MapScreen = ({route}) => {
   });
   console.log(position);
   useEffect(() => {
-    getLocation(setPosition);
+    userLocation(setPosition);
   }, []);
   return (
     <View style={styles.page}>
@@ -43,12 +43,10 @@ const MapScreen = ({route}) => {
             }}
           />
         </MapView>
-        {isPlaceClicked ? (
+        {isPlaceClicked && (
           <View style={styles.infoContainer}>
             <BottomContainer item={place} />
           </View>
-        ) : (
-          <></>
         )}
       </View>
     </View>

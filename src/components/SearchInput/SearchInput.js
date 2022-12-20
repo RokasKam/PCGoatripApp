@@ -10,7 +10,7 @@ const SearchInput = () => {
   };
   return (
     <View style={styles.sectionStyle}>
-      {searchAplied ? (
+      {searchAplied && (
         <Pressable
           onPress={() => {
             handleSearch('', false);
@@ -20,8 +20,6 @@ const SearchInput = () => {
             style={styles.backArrowImageStyle}
           />
         </Pressable>
-      ) : (
-        <></>
       )}
       <TextInput
         style={styles.textInput}

@@ -4,20 +4,20 @@ import InputToWriteRange from '../../components/InputToWriteRange/InputToWriteRa
 import DropDownPicker from 'react-native-dropdown-picker';
 import {styling} from './AddPlaceScreen.style';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-import PlaceCategory from '../../constants/placesCategories';
+import placesCategories from '../../constants/placesCategories';
 import BlurryBackround from '../../components/BlurryBackround/BlurryBackround';
 import Button from '../../components/Button/Button';
 import AddPhoto from './AddPhoto';
 import {
-  onCameraPress,
-  onImageLibraryPress,
-} from '../../serivces/generic/uploadPhoto';
+  cameraPhotoUploader,
+  imageLibraryPhotoUploader,
+} from '../../serivces/generic/photoUploader';
 
 const AddPlaceScreen = () => {
   const [name, setName] = useState('');
-  const [howManyPeople, setHowManyPeople] = useState({from: 0, to: 0});
-  const [whatCost, setWhatCost] = useState({from: 0, to: 0});
-  const [howLong, setHowLong] = useState({from: 0, to: 0});
+  const [peopleAmount, setPeopleAmount] = useState({from: 0, to: 0});
+  const [price, setPrice] = useState({from: 0, to: 0});
+  const [duration, setDuration] = useState({from: 0, to: 0});
   const [open, setOpen] = useState(false);
   const [category, setCategory] = useState('All');
   const [pickerResponse, setPickerResponse] = useState(null);
@@ -35,7 +35,7 @@ const AddPlaceScreen = () => {
             <TextInput
               style={styles.textInput}
               value={name}
-              onChangeText={value => setName(value)}
+              onChangeText={setName}
               placeholder="Place's name"
               placeholderTextColor="dimgrey"
               autoCapitalize="none"
@@ -52,7 +52,7 @@ const AddPlaceScreen = () => {
               dropDownContainerStyle={styles.dropDownList}
               open={open}
               value={category}
-              items={PlaceCategory}
+              items={placesCategories}
               setOpen={setOpen}
               setValue={setCategory}
               listMode={'SCROLLVIEW'}
@@ -60,18 +60,18 @@ const AddPlaceScreen = () => {
           </View>
           <InputToWriteRange
             upText="How many people can accept?"
-            inputInfo={howManyPeople}
-            setInputInfo={setHowManyPeople}
+            inputInfo={peopleAmount}
+            setInputInfo={setPeopleAmount}
           />
           <InputToWriteRange
             upText="What is the cost for one person?"
-            inputInfo={whatCost}
-            setInputInfo={setWhatCost}
+            inputInfo={price}
+            setInputInfo={setPrice}
           />
           <InputToWriteRange
             upText="How long does the visit could take?"
-            inputInfo={howLong}
-            setInputInfo={setHowLong}
+            inputInfo={duration}
+            setInputInfo={setDuration}
           />
           <View style={styles.button}>
             <Button
@@ -82,8 +82,10 @@ const AddPlaceScreen = () => {
           <AddPhoto
             isVisible={visible}
             onClose={() => setVisible(false)}
-            onImageLibraryPress={() => onImageLibraryPress(setPickerResponse)}
-            onCameraPress={() => onCameraPress(setPickerResponse)}
+            onImageLibraryPress={() =>
+              imageLibraryPhotoUploader(setPickerResponse)
+            }
+            onCameraPress={() => cameraPhotoUploader(setPickerResponse)}
             uri={uri}
           />
         </SafeAreaView>

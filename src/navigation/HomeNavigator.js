@@ -1,6 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Platform} from 'react-native';
+import {platformIos} from '../serivces/generic/platform';
 import MapScreen from '../screens/MapScreen/MapScreen';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 
@@ -16,7 +16,7 @@ const HomeNavigator = () => {
       />
       <Stack.Screen
         options={{
-          headerShown: Platform.OS === 'ios',
+          headerShown: platformIos(),
           headerTransparent: true,
           title: '',
           headerTintColor: 'black',

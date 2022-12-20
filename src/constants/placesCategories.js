@@ -1,4 +1,4 @@
-const PlaceCategory = [
+const placesCategories = [
   {label: 'All', value: 'All'},
   {label: 'Historic', value: 'Historic'},
   {label: 'Art', value: 'Art'},
@@ -8,4 +8,4 @@ const PlaceCategory = [
   {label: 'Outdoor', value: 'Outdoor'},
 ];
 
-export default PlaceCategory;
+export default placesCategories;

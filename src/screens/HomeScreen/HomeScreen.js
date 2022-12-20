@@ -16,7 +16,7 @@ const HomeScreen = () => {
     const fetchUser = async () => {
       const configurationObject = {
         method: 'get',
-        url: 'https://localhost:7026/api/Place',
+        url: 'https://cad5-158-129-7-76.eu.ngrok.io/api/place',
       };
       const response = await axios(configurationObject);
       console.log(response.data);

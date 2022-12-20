@@ -3,7 +3,7 @@ import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen/RegisterScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Platform} from 'react-native';
+import {platformIos} from '../serivces/generic/platform';
 import MainNavigator from './MainNavigator';
 
 const Stack = createNativeStackNavigator();
@@ -30,7 +30,7 @@ const LoginNavigator = () => {
         />
         <Stack.Screen
           options={{
-            headerShown: Platform.OS === 'ios',
+            headerShown: platformIos(),
             headerTransparent: true,
             title: '',
             headerTintColor: 'white',

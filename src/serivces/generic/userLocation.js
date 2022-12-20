@@ -1,9 +1,10 @@
 import Geolocation from '@react-native-community/geolocation';
-import {PermissionsAndroid, Platform} from 'react-native';
+import {PermissionsAndroid} from 'react-native';
+import {platformAndroid, platformIos} from './platform';
 
-export const getLocation = async setPosition => {
+export const userLocation = async setPosition => {
   let granted = null;
-  if (Platform.OS === 'android') {
+  if (platformAndroid()) {
     try {
       granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
@@ -16,10 +17,10 @@ export const getLocation = async setPosition => {
         },
       );
     } catch (err) {
-      console.warn(err);
+      console.log(err);
     }
   }
-  if (granted === PermissionsAndroid.RESULTS.GRANTED || Platform.OS === 'ios') {
+  if (granted === PermissionsAndroid.RESULTS.GRANTED || platformIos()) {
     Geolocation.getCurrentPosition(
       info =>
         setPosition({

@@ -13,7 +13,7 @@ const Input = ({
       <TextInput
         style={styles.textInput}
         value={text}
-        onChangeText={value => handleTextChange(value)}
+        onChangeText={handleTextChange}
         placeholder={placeHolder}
         placeholderTextColor="white"
         autoCapitalize="none"

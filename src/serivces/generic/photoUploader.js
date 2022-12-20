@@ -1,6 +1,6 @@
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
-export const onImageLibraryPress = setPickerResponse => {
+export const imageLibraryPhotoUploader = setPickerResponse => {
   const options = {
     selectionLimit: 1,
     mediaType: 'photo',
@@ -9,7 +9,7 @@ export const onImageLibraryPress = setPickerResponse => {
   launchImageLibrary(options, response => setPickerResponse(response));
 };
 
-export const onCameraPress = setPickerResponse => {
+export const cameraPhotoUploader = setPickerResponse => {
   const options = {
     saveToPhotos: false,
     mediaType: 'photo',
