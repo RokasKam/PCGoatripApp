@@ -20,4 +20,13 @@ export default StyleSheet.create({
     left: 12,
     right: 12,
   },
+  buttonContainer: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: -8,
+    backgroundColor: 'white',
+    borderBottomEndRadius: 8,
+    borderBottomStartRadius: 8,
+  },
 });

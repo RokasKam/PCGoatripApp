@@ -2,7 +2,7 @@ import Geolocation from '@react-native-community/geolocation';
 import {PermissionsAndroid} from 'react-native';
 import {platformAndroid, platformIos} from './platform';
 
-export const userLocation = async setPosition => {
+export const userLocation = async (setPosition, setWatchID) => {
   let granted = null;
   if (platformAndroid()) {
     try {
@@ -17,21 +17,20 @@ export const userLocation = async setPosition => {
         },
       );
     } catch (err) {
-      console.log(err);
+      console.warn(err);
     }
   }
   if (granted === PermissionsAndroid.RESULTS.GRANTED || platformIos()) {
-    Geolocation.getCurrentPosition(
+    const watchID = Geolocation.watchPosition(
       info =>
         setPosition({
           latitude: info.coords.latitude,
           longitude: info.coords.longitude,
-          latitudeDelta: 0.0421,
-          longitudeDelta: 0.0421,
         }),
       error => console.log(error),
       {enableHighAccuracy: true, timeout: 20000},
     );
+    setWatchID(watchID);
   } else {
     console.log('Permission denied');
   }
