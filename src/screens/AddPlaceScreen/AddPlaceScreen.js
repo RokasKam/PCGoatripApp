@@ -12,6 +12,7 @@ import {
   cameraPhotoUploader,
   imageLibraryPhotoUploader,
 } from '../../serivces/generic/photoUploader';
+import AddLocation from './AddLocation';
 
 const AddPlaceScreen = () => {
   const [name, setName] = useState('');
@@ -22,13 +23,20 @@ const AddPlaceScreen = () => {
   const [category, setCategory] = useState('All');
   const [pickerResponse, setPickerResponse] = useState(null);
   const [visible, setVisible] = useState(false);
+  const [visibleLocation, setVisibleLocation] = useState(false);
+  const [position, setPosition] = useState({
+    latitude: 10,
+    longitude: 10,
+  });
 
   const styles = styling(open);
   const uri = pickerResponse?.assets && pickerResponse.assets[0].uri;
 
   return (
     <BlurryBackround>
-      <KeyboardAwareScrollView contentContainerStyle={styles.page}>
+      <KeyboardAwareScrollView
+        contentContainerStyle={styles.page}
+        keyboardShouldPersistTaps="always">
         <SafeAreaView style={styles.section}>
           <Text style={styles.title}>Add a new place</Text>
           <View style={styles.nameInput}>
@@ -79,6 +87,12 @@ const AddPlaceScreen = () => {
               onClickAction={() => setVisible(true)}
             />
           </View>
+          <View style={styles.button}>
+            <Button
+              buttonText="Choose a location"
+              onClickAction={() => setVisibleLocation(true)}
+            />
+          </View>
           <AddPhoto
             isVisible={visible}
             onClose={() => setVisible(false)}
@@ -87,6 +101,12 @@ const AddPlaceScreen = () => {
             }
             onCameraPress={() => cameraPhotoUploader(setPickerResponse)}
             uri={uri}
+          />
+          <AddLocation
+            isVisible={visibleLocation}
+            onClose={() => setVisibleLocation(false)}
+            location={position}
+            setLocation={setPosition}
           />
         </SafeAreaView>
       </KeyboardAwareScrollView>
