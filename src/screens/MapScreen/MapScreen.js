@@ -12,7 +12,7 @@ const MapScreen = ({route}) => {
   const place = route.params.place;
   const placeLocation = {
     latitude: place.latitude,
-    longitude: place.longitude,
+    longitude: place.longtitude,
   };
   const [isPlaceClicked, setIsPlaceClicked] = useState(false);
   const [isNavigationNeeded, setIsNavigationNeeded] = useState(false);
@@ -57,7 +57,7 @@ const MapScreen = ({route}) => {
           style={styles.map}
           region={{
             latitude: place.latitude,
-            longitude: place.longitude,
+            longitude: place.longtitude,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}

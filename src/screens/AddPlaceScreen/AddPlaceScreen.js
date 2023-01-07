@@ -13,24 +13,28 @@ import {
   imageLibraryPhotoUploader,
 } from '../../serivces/generic/photoUploader';
 import AddLocation from './AddLocation';
+import {uploadNewPlace} from '../../serivces/business/uploadNewPlace';
 
 const AddPlaceScreen = () => {
-  const [name, setName] = useState('');
-  const [peopleAmount, setPeopleAmount] = useState({from: 0, to: 0});
-  const [price, setPrice] = useState({from: 0, to: 0});
-  const [duration, setDuration] = useState({from: 0, to: 0});
-  const [open, setOpen] = useState(false);
+  const styles = styling(openCategoryDropDown);
+  const [openCategoryDropDown, setOpenCategoryDropdown] = useState(false);
   const [category, setCategory] = useState('All');
-  const [pickerResponse, setPickerResponse] = useState(null);
-  const [visible, setVisible] = useState(false);
-  const [visibleLocation, setVisibleLocation] = useState(false);
-  const [position, setPosition] = useState({
-    latitude: 10,
-    longitude: 10,
+  const [pickedPhotoUri, setPickedPhotoUri] = useState('');
+  const [visiblePhotoPicker, setVisiblePhotoPicker] = useState(false);
+  const [visibleLocationPicker, setVisibleLocationPicker] = useState(false);
+  const [place, setPlace] = useState({
+    placeName: '',
+    photoBase64: '',
+    category: 'All',
+    peopleAmountFrom: 0,
+    peopleAmountTo: 0,
+    priceFrom: 0,
+    priceTo: 0,
+    visitDurationFrom: 0,
+    visitDurationTo: 0,
+    latitude: 0,
+    longtitude: 0,
   });
-
-  const styles = styling(open);
-  const uri = pickerResponse?.assets && pickerResponse.assets[0].uri;
 
   return (
     <BlurryBackround>
@@ -42,8 +46,8 @@ const AddPlaceScreen = () => {
           <View style={styles.nameInput}>
             <TextInput
               style={styles.textInput}
-              value={name}
-              onChangeText={setName}
+              value={place.placeName}
+              onChangeText={text => setPlace({...place, placeName: text})}
               placeholder="Place's name"
               placeholderTextColor="dimgrey"
               autoCapitalize="none"
@@ -58,55 +62,78 @@ const AddPlaceScreen = () => {
               textStyle={styles.dropDownText}
               containerStyle={styles.dropDownContainer}
               dropDownContainerStyle={styles.dropDownList}
-              open={open}
+              open={openCategoryDropDown}
               value={category}
               items={placesCategories}
-              setOpen={setOpen}
+              setOpen={setOpenCategoryDropdown}
               setValue={setCategory}
+              onSelectItem={item => setPlace({...place, category: item.value})}
               listMode={'SCROLLVIEW'}
             />
           </View>
           <InputToWriteRange
             upText="How many people can accept?"
-            inputInfo={peopleAmount}
-            setInputInfo={setPeopleAmount}
+            inputInfoFrom={place.peopleAmountFrom}
+            inputInfoTo={place.peopleAmountTo}
+            setInputInfoFrom={text =>
+              setPlace({...place, peopleAmountFrom: text})
+            }
+            setInputInfoTo={text => setPlace({...place, peopleAmountTo: text})}
           />
           <InputToWriteRange
             upText="What is the cost for one person?"
-            inputInfo={price}
-            setInputInfo={setPrice}
+            inputInfoFrom={place.priceFrom}
+            inputInfoTo={place.priceTo}
+            setInputInfoFrom={text => setPlace({...place, priceFrom: text})}
+            setInputInfoTo={text => setPlace({...place, priceTo: text})}
           />
           <InputToWriteRange
             upText="How long does the visit could take?"
-            inputInfo={duration}
-            setInputInfo={setDuration}
+            inputInfoFrom={place.visitDurationFrom}
+            inputInfoTo={place.visitDurationTo}
+            setInputInfoFrom={text =>
+              setPlace({...place, visitDurationFrom: text})
+            }
+            setInputInfoTo={text => setPlace({...place, visitDurationTo: text})}
           />
           <View style={styles.button}>
             <Button
               buttonText="Choose a picture"
-              onClickAction={() => setVisible(true)}
+              onClickAction={() => setVisiblePhotoPicker(true)}
             />
           </View>
           <View style={styles.button}>
             <Button
               buttonText="Choose a location"
-              onClickAction={() => setVisibleLocation(true)}
+              onClickAction={() => setVisibleLocationPicker(true)}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              buttonText="Add the place"
+              onClickAction={() => uploadNewPlace(place)}
             />
           </View>
           <AddPhoto
-            isVisible={visible}
-            onClose={() => setVisible(false)}
+            isVisible={visiblePhotoPicker}
+            onClose={() => setVisiblePhotoPicker(false)}
             onImageLibraryPress={() =>
-              imageLibraryPhotoUploader(setPickerResponse)
+              imageLibraryPhotoUploader(setPickedPhotoUri, base64 =>
+                setPlace({...place, photoBase64: base64}),
+              )
             }
-            onCameraPress={() => cameraPhotoUploader(setPickerResponse)}
-            uri={uri}
+            onCameraPress={() =>
+              cameraPhotoUploader(setPickedPhotoUri, base64 =>
+                setPlace({...place, photoBase64: base64}),
+              )
+            }
+            uri={pickedPhotoUri}
           />
           <AddLocation
-            isVisible={visibleLocation}
-            onClose={() => setVisibleLocation(false)}
-            location={position}
-            setLocation={setPosition}
+            isVisible={visibleLocationPicker}
+            onClose={() => setVisibleLocationPicker(false)}
+            place={place}
+            setPlace={setPlace}
           />
         </SafeAreaView>
       </KeyboardAwareScrollView>

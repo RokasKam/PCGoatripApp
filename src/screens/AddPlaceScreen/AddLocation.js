@@ -5,14 +5,15 @@ import Modal from 'react-native-modal';
 import {GooglePlacesAutocomplete} from 'react-native-google-places-autocomplete';
 import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
-const AddLocation = ({isVisible, onClose, location, setLocation}) => {
+const AddLocation = ({isVisible, onClose, place, setPlace}) => {
   const [isMarkerNeeded, setIsMarkerNeeded] = useState(false);
 
   const handlePlacePress = details => {
     setIsMarkerNeeded(true);
-    setLocation({
+    setPlace({
+      ...place,
       latitude: details.geometry.location.lat,
-      longitude: details.geometry.location.lng,
+      longtitude: details.geometry.location.lng,
     });
   };
   return (
@@ -44,12 +45,19 @@ const AddLocation = ({isVisible, onClose, location, setLocation}) => {
             provider={PROVIDER_GOOGLE}
             style={styles.map}
             region={{
-              latitude: location.latitude,
-              longitude: location.longitude,
+              latitude: place.latitude,
+              longitude: place.longtitude,
               latitudeDelta: isMarkerNeeded ? 0.0421 : 100,
               longitudeDelta: isMarkerNeeded ? 0.0922 : 100,
             }}>
-            {isMarkerNeeded && <Marker coordinate={location} />}
+            {isMarkerNeeded && (
+              <Marker
+                coordinate={{
+                  latitude: place.latitude,
+                  longitude: place.longtitude,
+                }}
+              />
+            )}
           </MapView>
         </View>
       </View>

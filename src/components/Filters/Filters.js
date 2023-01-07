@@ -3,11 +3,7 @@ import React, {useState} from 'react';
 import placesCategories from '../../constants/placesCategories';
 import styles from './Filters.style';
 
-const Filters = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const onClick = category => {
-    setSelectedCategory(category);
-  };
+const Filters = ({selectedCategory, currentFilterChanger}) => {
   return (
     <FlatList
       style={styles.container}
@@ -23,7 +19,7 @@ const Filters = () => {
               borderWidth: item.label === selectedCategory ? 0 : 0.5,
             },
           ]}
-          onPress={() => onClick(item.label)}>
+          onPress={() => currentFilterChanger(item.label)}>
           <Text
             style={[
               styles.title,

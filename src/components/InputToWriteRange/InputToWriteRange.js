@@ -2,7 +2,13 @@ import {View, Text, TextInput} from 'react-native';
 import React from 'react';
 import styles from './InputToWriteRange.style';
 
-const InputToWriteRange = ({upText, inputInfo, setInputInfo}) => {
+const InputToWriteRange = ({
+  upText,
+  inputInfoFrom,
+  inputInfoTo,
+  setInputInfoFrom,
+  setInputInfoTo,
+}) => {
   return (
     <View style={styles.writeRange}>
       <Text style={styles.topText}>{upText}</Text>
@@ -13,8 +19,8 @@ const InputToWriteRange = ({upText, inputInfo, setInputInfo}) => {
             defaultValue="0"
             keyboardType="numeric"
             style={styles.textInput}
-            value={inputInfo.from}
-            onChangeText={value => setInputInfo({...inputInfo, from: value})}
+            value={inputInfoFrom}
+            onChangeText={value => setInputInfoFrom(value)}
             placeholder="from"
             placeholderTextColor="dimgrey"
             autoCapitalize="none"
@@ -27,8 +33,8 @@ const InputToWriteRange = ({upText, inputInfo, setInputInfo}) => {
             defaultValue="0"
             keyboardType="numeric"
             style={styles.textInput}
-            value={inputInfo.to}
-            onChangeText={value => setInputInfo({...inputInfo, to: value})}
+            value={inputInfoTo}
+            onChangeText={value => setInputInfoTo(value)}
             placeholder="to"
             placeholderTextColor="dimgrey"
             autoCapitalize="none"
